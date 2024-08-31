@@ -31,6 +31,7 @@ namespace AppDirectoryModule
                 Directory.CreateDirectory(path);
             }
         }
+
         public IEnumerable<string> GetDirectoryFiles(string path)
         {
             return Directory.EnumerateFiles(path);

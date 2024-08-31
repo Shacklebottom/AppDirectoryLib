@@ -7,6 +7,8 @@ namespace AppDirectoryModule
 
         void CreateAppDirectory(string path);
 
+        void CreateAppDirectories(string[] paths);
+
         IEnumerable<string> GetDirectoryFiles(string path);
     }
 }
