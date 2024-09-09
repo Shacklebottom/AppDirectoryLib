@@ -16,6 +16,7 @@ namespace AppDirectoryModule
             CreateAppDirectory(AppDir);
         }
 
+        //override this method!
         public abstract string GetAppDirectory();
 
         public void CreateAppDirectory(string path)
