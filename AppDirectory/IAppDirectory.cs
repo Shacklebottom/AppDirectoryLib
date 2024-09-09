@@ -5,10 +5,12 @@ namespace AppDirectoryModule
     {
         string RootDirectory { get; }
 
+        string AppDir { get; }
+
         void CreateAppDirectory(string path);
 
         void CreateAppDirectories(string[] paths);
 
-        IEnumerable<string> GetDirectoryFiles(string path);
+        string GetAppDirectory();
     }
 }

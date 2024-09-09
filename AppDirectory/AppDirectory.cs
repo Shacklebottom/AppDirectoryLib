@@ -1,16 +1,22 @@
 ﻿
 namespace AppDirectoryModule
 {
-    public class AppDirectory : IAppDirectory
+    public abstract class AppDirectory : IAppDirectory
     {
         public string RootDirectory { get; private set; }
+
+        public string AppDir => GetAppDirectory();
 
         public AppDirectory(string rootDir)
         {
             RootDirectory = rootDir;
 
             CreateAppDirectory(rootDir);
+
+            CreateAppDirectory(AppDir);
         }
+
+        public abstract string GetAppDirectory();
 
         public void CreateAppDirectory(string path)
         {
@@ -30,11 +36,6 @@ namespace AppDirectoryModule
             {
                 Directory.CreateDirectory(path);
             }
-        }
-
-        public IEnumerable<string> GetDirectoryFiles(string path)
-        {
-            return Directory.EnumerateFiles(path);
         }
     }
 }
